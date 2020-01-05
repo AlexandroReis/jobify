@@ -102,7 +102,7 @@ app.get('/admin/vagas/editar/:id',async(req,res)=>{
 })
 
 
-
+//comment
 app.post('/admin/vagas/editar/:id',async(req,res)=>{
     //destruction assament
     const{titulo,descricao,categoria} = req.body
