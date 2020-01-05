@@ -1,0 +1,40 @@
+
+<%-include('header')%>
+<p>Site desenvolvido durante o curso fullstack lab</p>
+<h2>Editar vaga:
+
+    <a href="/admin/vagas/nova">Vagas</a>
+</h2>
+
+
+
+<div>
+<form method="POST">
+
+    <label>Titulo</label>
+    <input type="text" name="titulo" value="<%= vaga.titulo %>">
+
+    <label>Descricao</label>
+    <textarea name="descricao"  cols="30" rows="10"><%= vaga.descricao %></textarea>
+
+    <label>categoria</label>
+    <select name="categoria" >
+        <% categorias.forEach( categoria =>{ %>
+        <option value="<%= categoria.id %>"<% if (categoria.id==vaga.categoria){ %>selected<% } %>><%= categoria.categoria %></option>
+        
+        <% }) %>
+    </select>
+    <br><br>
+
+    <button>
+
+    Salvar    
+    </button>
+</form>
+    
+    
+</div>
+
+
+
+<%-include('footer')%>

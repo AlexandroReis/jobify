@@ -1,0 +1,80 @@
+mkdir jobify
+cd jobify
+code .
+
+//descrever como projeto vai funcionar
+npm init
+
+//Instalar pacotes de terceiros - reutilizar modulos - codigos
+
+npm install express
+
+para recriar o node_module posso dar um npm install
+
+para separar o html do javascrip usamos o npm install ejs
+
+{
+
+     <p><%- date%></p>
+
+     <html>
+
+<head>
+    <title>JOBIFY</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+
+</body>
+
+
+</html>
+
+----------------------------------------
+banco de dados simples sqlite
+
+npm install sqlite
+---------------------------------------------------------------
+
+#home.ejs
+<div>
+
+        <h3>Marketing team</h3>
+        <ul>
+
+            <li>Digital Marketing (San Francisco)</li>
+        </ul>
+    </div>
+
+-----------------------------------------------------------------
+
+#vaga.ejs
+
+<div>
+
+        <h3>Engineering team</h3>
+        <ul>
+
+            <li><a href="vaga">Fullstack Developer (Remote)</a> </li<>
+        </ul>
+    </div>
+---------------------------------------------------------------------------
+
+<ul>
+        <% vagas.forEach( vaga =>{ %>
+
+        <li>
+            <%- vaga.titulo %>
+            <a href="/admin/vagas/delete/<%- vaga.id %>">Excluir</a> 
+        
+        </li>
+        <% }) %>
+    </ul>
+	
+------------------------------------------------------------------------------------
+
+
+npm install body-parser - entende e extrai dados deste body
