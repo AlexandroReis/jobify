@@ -106,6 +106,14 @@ app.get('/admin/vagas/editar/:id',async(req,res)=>{
 //passando para externo
 const port = process.env.PORT || 3000
 
+app.use('/admin',(req,res,next)=>{
+    if(req.hostname==='localhost'){
+        next()
+    }else{
+        res.send('not allowed')
+    }
+})
+
 app.set('views',path.join(__dirname,'views'))
 app.post('/admin/vagas/editar/:id',async(req,res)=>{
     //destruction assament
