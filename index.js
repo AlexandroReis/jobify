@@ -102,7 +102,10 @@ app.get('/admin/vagas/editar/:id',async(req,res)=>{
 })
 
 
-//comment
+//passando para externo
+const port = process.env.PORT || 3000
+
+
 app.post('/admin/vagas/editar/:id',async(req,res)=>{
     //destruction assament
     const{titulo,descricao,categoria} = req.body
@@ -133,7 +136,7 @@ const init = async()=>{
 init()
 
 
-app.listen(3000,(err)=>
+app.listen(port,(err)=>
 {   if(err){
         console.log('Não foi possivel iniciar o servidor jobify')
 
