@@ -106,7 +106,7 @@ app.get('/admin/vagas/editar/:id',async(req,res)=>{
 //passando para externo
 const port = process.env.PORT || 3000
 
-app.use('/admin/vagas',(req,res,next)=>{
+app.use('/admin/',(req,res,next)=>{
     if(req.hostname === 'localhost'){
         next()
     }else{
