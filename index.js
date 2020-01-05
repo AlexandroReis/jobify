@@ -9,7 +9,7 @@ const sqlite= require('sqlite')
 const dbConnection = sqlite.open(path.resolve (__dirname,'banco.sqlite'),{Promise})
 
 app.set('view engine','ejs')
-app.use(express.static('public'))
+app.use(express.static((path.resolve (__dirname,'public')))
 //tudo que passar app do express ele vai passar pelo bodyparser vai tentar entender
 //extend extender tipos que vem do form alem de string e vetores
 app.use(bodyParser.urlencoded({extended:true}))
