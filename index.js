@@ -106,7 +106,7 @@ app.get('/admin/vagas/editar/:id',async(req,res)=>{
 //passando para externo
 const port = process.env.PORT || 3000
 
-
+app.set('views',path.join(__dirname,'views'))
 app.post('/admin/vagas/editar/:id',async(req,res)=>{
     //destruction assament
     const{titulo,descricao,categoria} = req.body
