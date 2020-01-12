@@ -14,10 +14,7 @@ app.use(express.static(path.join(__dirname,'public')))
 //extend extender tipos que vem do form alem de string e vetores
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.use('/admin', (req, res, next) => {
-    if(req.hostname === 'localhost') next()
-    else res.render('405')
-})
+
 
 //callback - chama a funcionalidade - fc
 app.get('/',async(request,response)=>{
